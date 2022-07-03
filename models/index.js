@@ -8,22 +8,22 @@ User.hasMany(Posts, {
     onDelete: "CASCADE"
 })
 
-Posts.belongsTo(User, {
-    foreignKey: "user_id"
-})
-
 User.hasMany(Comments, {
     foreignKey: "user_id",
     onDelete: "CASCADE"
 })
 
-Comments.belongsTo(User, {
+Posts.belongsTo(User, {
     foreignKey: "user_id"
 })
 
 Posts.hasMany(Comments, {
     foreignKey: "post_id",
     onDelete: "CASCADE"
+})
+
+Comments.belongsTo(User, {
+    foreignKey: "user_id"
 })
 
 Comments.belongsTo(Posts, {
