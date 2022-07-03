@@ -12,7 +12,7 @@ const app = express();
 
 //set up our session
 const sess = {
-    secret: "placeholder",
+    secret: "miso ramen",
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
