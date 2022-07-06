@@ -24,8 +24,10 @@ router.get('/', (req, res) => {
                 }
             ]
         })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
+        .then(postData => {
+
+            // data serialization 
+            const posts = postData.map(post => post.get({ plain: true }));
             res.render('homepage', { posts, loggedIn: req.session.loggedIn });
         })
         .catch(err => {

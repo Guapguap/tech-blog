@@ -28,7 +28,7 @@ router.get('/', withAuth, (req, res) => {
             ]
         })
         .then(postData => {
-            
+
             // data serialization 
             const posts = postData.map(post => post.get({ plain: true }));
             res.render('dashboard', { posts, loggedIn: true });
@@ -38,3 +38,5 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+
+module.exports = router;
