@@ -27,8 +27,10 @@ router.get('/', withAuth, (req, res) => {
                 }
             ]
         })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
+        .then(postData => {
+            
+            // data serialization 
+            const posts = postData.map(post => post.get({ plain: true }));
             res.render('dashboard', { posts, loggedIn: true });
         })
         .catch(err => {

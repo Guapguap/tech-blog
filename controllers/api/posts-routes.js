@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
                 }
             ]
         })
-        .then(dbPostData => res.json(dbPostData.reverse()))
+        .then(postData => res.json(postData.reverse()))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
